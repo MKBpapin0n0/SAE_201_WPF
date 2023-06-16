@@ -41,17 +41,17 @@ namespace MATINFO
 
         private void btValiderPopUp_Click(object sender, RoutedEventArgs e)
         {
-            ((Categorie)applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Nomcategorie = tbPopUp.Text;
-            // on doit déclencher la mise à jour du binding
-            if (    Mode.Update) 
-            {  
-                ((Categorie)applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Update();
-            }
-            else if (  Mode.Insert)
-            { 
-                ((Categorie)applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Create();
-            }
-            this.Close();
+            //((Categorie)applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Nomcategorie = tbPopUp.Text;
+            //// on doit déclencher la mise à jour du binding
+            //if (    Mode.Update) 
+            //{  
+            //    ((Categorie)applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Update();
+            //}
+            //else if (  Mode.Insert)
+            //{ 
+            //    ((Categorie)applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Create();
+            //}
+            //this.Close();
         }
 
     }
