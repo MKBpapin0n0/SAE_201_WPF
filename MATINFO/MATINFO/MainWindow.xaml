@@ -146,7 +146,7 @@
                     <GridViewColumn
                         Width="75"
                         DisplayMemberBinding="{Binding Prenompersonnel}"
-                        Header="Personne" />
+                        Header="Prenom" />
                     <GridViewColumn
                         Width="200"
                         DisplayMemberBinding="{Binding Emailpersonnel}"
@@ -171,25 +171,28 @@
             Height="30"
             Margin="30,567,850,0"
             VerticalAlignment="Top"
+            Click="btAjouterCategorie_Click"
             Content="Ajouter"
             FontSize="15"
-            FontWeight="Bold" Click="btAjouterCategorie_Click" />
+            FontWeight="Bold" />
         <Button
             x:Name="btSupprimerCategorie"
             Height="30"
             Margin="30,638,850,0"
             VerticalAlignment="Top"
+            Click="btSupprimerCategorie_Click"
             Content="Supprimer"
             FontSize="15"
-            FontWeight="Bold" Click="btSupprimerCategorie_Click" />
+            FontWeight="Bold" />
         <Button
             x:Name="btModifierCategorie"
             Height="30"
             Margin="30,603,850,0"
             VerticalAlignment="Top"
+            Click="btModifierCategorie_Click"
             Content="Modifier"
             FontSize="15"
-            FontWeight="Bold" Click="btModifierCategorie_Click" />
+            FontWeight="Bold" />
         <Rectangle
             x:Name="rectMateriel"
             Margin="318,552,521,10"
@@ -216,17 +219,19 @@
             Height="30"
             Margin="338,603,542,0"
             VerticalAlignment="Top"
+            Click="btModifierMateriel_Click"
             Content="Modifier"
             FontSize="15"
-            FontWeight="Bold" Click="btModifierMateriel_Click" />
+            FontWeight="Bold" />
         <Button
             x:Name="btSupprimerMateriel"
             Height="30"
             Margin="338,638,542,0"
             VerticalAlignment="Top"
+            Click="btSupprimerMateriel_Click"
             Content="Supprimer"
             FontSize="15"
-            FontWeight="Bold" Click="btSupprimerMateriel_Click" />
+            FontWeight="Bold" />
         <Rectangle Margin="732,552,110,10" Stroke="Black" />
         <Label
             x:Name="lbPersonnel"
@@ -250,16 +255,18 @@
             Height="30"
             Margin="751,603,129,0"
             VerticalAlignment="Top"
+            Click="btModifierPersonnel_Click"
             Content="Modifier"
             FontSize="15"
-            FontWeight="Bold" Click="btModifierPersonnel_Click" />
+            FontWeight="Bold" />
         <Button
             x:Name="btSupprimerPersonnel"
             Height="30"
             Margin="751,640,129,0"
             VerticalAlignment="Top"
+            Click="btSupprimerPersonnel_Click"
             Content="Supprimer"
             FontSize="15"
-            FontWeight="Bold" Click="btSupprimerPersonnel_Click" />
+            FontWeight="Bold" />
     </Grid>
 </Window>

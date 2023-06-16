@@ -22,12 +22,12 @@ namespace MATINFO
     public partial class WindowPopUp : Window
     {
         int idcategorie;
-        Mode LeMode;
+        Mode leMode;
         public WindowPopUp(int idcategorie, Mode mode)
         {
             InitializeComponent();
             this.idcategorie = idcategorie;
-            this.LeMode = mode;
+            this.leMode = mode;
 
             if (mode == Mode.Update)
             {
@@ -45,15 +45,16 @@ namespace MATINFO
         {
 
             // on doit déclencher la mise à jour du binding
-            if (Mode.Update == LeMode)
+            if (Mode.Update == leMode)
             {
                 ((Categorie)applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Nomcategorie = tbPopUp.Text;
                 ((Categorie)applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Update();
         }
-            else if (Mode.Insert == LeMode)
+            else if (Mode.Insert == leMode)
             {
-                ((Categorie) applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Nomcategorie = tbPopUp.Text;
-                ((Categorie) applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Create();
+                Categorie cat = new Categorie(Categorie.RecupeId(),tbPopUp.Text);
+                applicationData.lesCategories.Add(cat);
+                cat.Create();
     }
             this.Close();
         }

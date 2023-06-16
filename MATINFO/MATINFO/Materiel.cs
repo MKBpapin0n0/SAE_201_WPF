@@ -38,7 +38,7 @@ namespace MATINFO
         {
             DataAccess data = new DataAccess();
             data.OpenConnection();
-            data.SetData($"INSERT INTO Materiel VALUES({this.Idmateriel},{this.FK_Idcategorie},{this.Nommateriel},{this.Referenceconstructeurmateriel},{this.Codebarreinventaire})");
+            data.SetData($"INSERT INTO Materiel VALUES({this.Idmateriel},{this.FK_Idcategorie},'{this.Nommateriel}','{this.Referenceconstructeurmateriel}','{this.Codebarreinventaire}')");
         }
 
         public void Delete()

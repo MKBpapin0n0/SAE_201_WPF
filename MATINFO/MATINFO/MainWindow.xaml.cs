@@ -148,7 +148,7 @@ namespace MATINFO
 
         private void btAjouterCategorie_Click(object sender, RoutedEventArgs e)
         {
-            new WindowPopUp(((Categorie)lvCategorie.SelectedItem).Idcategorie, Mode.Insert).ShowDialog();
+            new WindowPopUp(0, Mode.Insert).ShowDialog();
             applicationData.Refresh();
 
             lvCategorie.ItemsSource = applicationData.lesCategories;

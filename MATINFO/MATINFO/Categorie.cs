@@ -50,7 +50,7 @@ namespace MATINFO
         {
             DataAccess data = new DataAccess();
             data.OpenConnection();
-            data.SetData($"INSERT INTO Categorie_materiel VALUES({this.Idcategorie},{this.Nomcategorie})");
+            data.SetData($"INSERT INTO Categorie_materiel VALUES({this.Idcategorie},'{this.Nomcategorie}')");
         }
 
         public void Read()
@@ -81,6 +81,14 @@ namespace MATINFO
         public void Remove(Materiel materiel)
         {
             this.lesMateriels.Remove(materiel);
+        }
+        public static int RecupeId()
+        {
+            DataAccess dat = new DataAccess();
+            dat.OpenConnection();
+            DataTable dt = dat.GetData("SELECT nextval('categorie_materiel_idcategorie_seq'::regclass)\"Tu\" FROM Categorie_materiel");
+            int result =Convert.ToInt32(dt.Rows[0]["Tu"]);
+            return result;
         }
     }
 }
