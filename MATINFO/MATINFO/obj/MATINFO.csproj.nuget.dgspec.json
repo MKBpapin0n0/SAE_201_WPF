@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\grumeaun\\Desktop\\MATINFO\\MATINFO\\MATINFO.csproj": {}
+    "C:\\Users\\grumeaun\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\MATINFO\\MATINFO.csproj": {}
   },
   "projects": {
-    "C:\\Users\\grumeaun\\Desktop\\MATINFO\\MATINFO\\MATINFO.csproj": {
+    "C:\\Users\\grumeaun\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\MATINFO\\MATINFO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\grumeaun\\Desktop\\MATINFO\\MATINFO\\MATINFO.csproj",
+        "projectUniqueName": "C:\\Users\\grumeaun\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\MATINFO\\MATINFO.csproj",
         "projectName": "MATINFO",
-        "projectPath": "C:\\Users\\grumeaun\\Desktop\\MATINFO\\MATINFO\\MATINFO.csproj",
+        "projectPath": "C:\\Users\\grumeaun\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\MATINFO\\MATINFO.csproj",
         "packagesPath": "C:\\Users\\grumeaun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\grumeaun\\Desktop\\MATINFO\\MATINFO\\obj\\",
+        "outputPath": "C:\\Users\\grumeaun\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\MATINFO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
