@@ -71,7 +71,7 @@ namespace MATINFO
         {
             DataAccess data = new DataAccess();
             data.OpenConnection();
-            data.SetData($"DELETE FROM Categorie_materiel WHERE idcategorie = ({this.Idcategorie})");
+            data.SetData($"DELETE FROM Categorie_materiel WHERE idcategorie = {this.Idcategorie}");
         }
 
         public ObservableCollection<Categorie> FindBySelection(string criteres)
