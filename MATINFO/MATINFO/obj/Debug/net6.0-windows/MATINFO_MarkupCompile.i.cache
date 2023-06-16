@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\biancale\source\repos\SAE_201_WPF\MATINFO\MATINFO\App.xaml
-3-764173644
+3-44734143
 
-14-1636614291
+14914292489
 1962133531271
-MainWindow.xaml;WindowPopUp.xaml;WindowPopUpModifMateriel.xaml;
+MainWindow.xaml;WindowModifMat.xaml;WindowPopUp.xaml;
 
 True
 

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace MATINFO
 {
     /// <summary>
-    /// Logique d'interaction pour WindowPopUpModifMateriel.xaml
+    /// Logique d'interaction pour WindowModifMat.xaml
     /// </summary>
-    public partial class WindowPopUpModifMateriel : Window
+    public partial class WindowModifMat : Window
     {
-        public WindowPopUpModifMateriel()
+        public WindowModifMat()
         {
             InitializeComponent();
         }
