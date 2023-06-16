@@ -10,6 +10,8 @@
     Height="725"
     MinWidth="1000"
     MinHeight="700"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.DataContext>
         <local:ApplicationData x:Name="ApplicationData" />
