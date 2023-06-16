@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "J8RGkk/URQdirgLH3soycJjwtWtxxgaPCCDAFY56+8TbylS1FWdjRNHRBydXkHAfwF2QClXxeJABAU1+dEZ7mw==",
+  "dgSpecHash": "Qt0BpupcxI0T395CWvvgi9UY0rXP/7+m4+HOdvh1+iyz+eyG3QmXBZYE83xyQ9+1OI0Ndljdw3IrALfOUOLK2g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\grumeaun\\Desktop\\MATINFO\\MATINFO\\MATINFO.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\biancale\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\MATINFO.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\biancale\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\biancale\\.nuget\\packages\\npgsql\\7.0.4\\npgsql.7.0.4.nupkg.sha512",
+    "C:\\Users\\biancale\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

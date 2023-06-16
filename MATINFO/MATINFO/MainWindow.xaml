@@ -11,10 +11,13 @@
     MinWidth="1000"
     MinHeight="700"
     mc:Ignorable="d">
+    <Window.DataContext>
+        <local:ApplicationData x:Name="ApplicationData" />
+    </Window.DataContext>
     <Grid>
         <ListView
             x:Name="lvAttribution"
-            Margin="10,10,340,368"
+            Margin="10,10,340,372"
             d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListView.View>
                 <GridView>
@@ -88,10 +91,13 @@
             Height="190"
             Margin="10,342,829,0"
             VerticalAlignment="Top"
-            d:ItemsSource="{d:SampleData ItemCount=5}">
+            ItemsSource="{Binding Path=lesCategories}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="150" Header="Nom Catégorie" />
+                    <GridViewColumn
+                        Width="150"
+                        DisplayMemberBinding="{Binding Nomcategorie}"
+                        Header="Categorie" />
                 </GridView>
             </ListView.View>
         </ListView>
@@ -102,13 +108,22 @@
             Margin="0,342,396,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            d:ItemsSource="{d:SampleData ItemCount=5}">
+            DataContext="{Binding SelectedItem, ElementName=lvCategorie}"
+            ItemsSource="{Binding Path=lesMateriels}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="80" Header="Nom Matériel" />
-                    <GridViewColumn Width="100" Header="Nom Catégorie" />
-                    <GridViewColumn Width="100" Header="Référence" />
-                    <GridViewColumn Width="120" Header="Code Barre" />
+                    <GridViewColumn
+                        Width="200"
+                        DisplayMemberBinding="{Binding Nommateriel}"
+                        Header="Nom materiel" />
+                    <GridViewColumn
+                        Width="200"
+                        DisplayMemberBinding="{Binding Referenceconstructeurmateriel}"
+                        Header="Reference" />
+                    <GridViewColumn
+                        Width="200"
+                        DisplayMemberBinding="{Binding Codebarreinventaire}"
+                        Header="Code Barre" />
                 </GridView>
             </ListView.View>
         </ListView>
@@ -119,12 +134,21 @@
             Margin="0,342,9,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            d:ItemsSource="{d:SampleData ItemCount=5}">
+            ItemsSource="{Binding Path=LesPersonnels}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="100" Header="Nom" />
-                    <GridViewColumn Width="100" Header="Prénom" />
-                    <GridViewColumn Width="150" Header="Mail" />
+                    <GridViewColumn
+                        Width="75"
+                        DisplayMemberBinding="{Binding Nompersonnel}"
+                        Header="Nom" />
+                    <GridViewColumn
+                        Width="75"
+                        DisplayMemberBinding="{Binding Prenompersonnel}"
+                        Header="Personne" />
+                    <GridViewColumn
+                        Width="200"
+                        DisplayMemberBinding="{Binding Emailpersonnel}"
+                        Header="Email" />
                 </GridView>
             </ListView.View>
         </ListView>
@@ -155,7 +179,7 @@
             VerticalAlignment="Top"
             Content="Supprimer"
             FontSize="15"
-            FontWeight="Bold" />
+            FontWeight="Bold" Click="btSupprimerCategorie_Click" />
         <Button
             x:Name="btModifierCategorie"
             Height="30"
@@ -200,10 +224,8 @@
             VerticalAlignment="Top"
             Content="Supprimer"
             FontSize="15"
-            FontWeight="Bold" />
-        <Rectangle
-            Margin="732,552,110,10"
-            Stroke="Black" />
+            FontWeight="Bold" Click="btSupprimerMateriel_Click" />
+        <Rectangle Margin="732,552,110,10" Stroke="Black" />
         <Label
             x:Name="lbPersonnel"
             Margin="761,537,0,0"
@@ -236,6 +258,6 @@
             VerticalAlignment="Top"
             Content="Supprimer"
             FontSize="15"
-            FontWeight="Bold" />
+            FontWeight="Bold" Click="btSupprimerPersonnel_Click" />
     </Grid>
 </Window>
