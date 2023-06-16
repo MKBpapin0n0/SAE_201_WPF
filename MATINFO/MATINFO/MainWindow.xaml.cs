@@ -95,7 +95,7 @@ namespace MATINFO
 
             if (lvCategorie.SelectedItem != null)
             {
-                new WindowPopUp(((Categorie)lvCategorie.SelectedItem).Idcategorie).ShowDialog();
+                new WindowPopUp(((Categorie)lvCategorie.SelectedItem).Idcategorie, Mode.Update).ShowDialog();
                 applicationData.Refresh();
 
                 lvCategorie.ItemsSource = applicationData.lesCategories;
@@ -113,18 +113,45 @@ namespace MATINFO
         private void btModifierMateriel_Click(object sender, RoutedEventArgs e)
         {
 
-            if (lvCategorie.SelectedItem != null)
+            if (lvMateriel.SelectedItem != null)
             {
-                WindowPopUp popUp = new WindowPopUp(1);
-                popUp.Show();
+                new WindowModifMat(((Materiel)lvMateriel.SelectedItem).Idmateriel, ModeMat.Update).ShowDialog();
+                applicationData.Refresh();
+
+                lvMateriel.ItemsSource = applicationData.lesMateriels;
 
 
             }
 
             else
             {
-                var ok = MessageBox.Show("Sélectionnez une catégorie pour la modifier", "Selection supression", MessageBoxButton.OK, MessageBoxImage.Warning);
+                var ok = MessageBox.Show("Sélectionnez un matériel pour la modifier", "Selection supression", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+        }
+
+        private void btModifierPersonnel_Click(object sender, RoutedEventArgs e)
+        {
+            if (lvPersonnel.SelectedItem != null)
+            {
+                new WindowModifPerso(((Personnel)lvPersonnel.SelectedItem).Idpersonnel, ModePerso.Update).ShowDialog();
+                applicationData.Refresh();
+
+                lvPersonnel.ItemsSource = applicationData.LesPersonnels;
+
+            }
+
+            else
+            {
+                var ok = MessageBox.Show("Sélectionnez un personnel pour la modifier", "Selection supression", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void btAjouterCategorie_Click(object sender, RoutedEventArgs e)
+        {
+            new WindowPopUp(((Categorie)lvCategorie.SelectedItem).Idcategorie, Mode.Insert).ShowDialog();
+            applicationData.Refresh();
+
+            lvCategorie.ItemsSource = applicationData.lesCategories;
         }
     }
 }

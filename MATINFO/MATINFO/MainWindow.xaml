@@ -173,7 +173,7 @@
             VerticalAlignment="Top"
             Content="Ajouter"
             FontSize="15"
-            FontWeight="Bold" />
+            FontWeight="Bold" Click="btAjouterCategorie_Click" />
         <Button
             x:Name="btSupprimerCategorie"
             Height="30"
@@ -252,7 +252,7 @@
             VerticalAlignment="Top"
             Content="Modifier"
             FontSize="15"
-            FontWeight="Bold" />
+            FontWeight="Bold" Click="btModifierPersonnel_Click" />
         <Button
             x:Name="btSupprimerPersonnel"
             Height="30"

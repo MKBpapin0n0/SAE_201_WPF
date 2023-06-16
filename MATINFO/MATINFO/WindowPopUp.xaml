@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MATINFO"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title=""
+    Title="Modification Catégorie"
     Width="600"
     Height="400"
     ResizeMode="NoResize"
@@ -38,8 +38,23 @@
                 TextAlignment="Center"
                 TextWrapping="Wrap" />
         </StackPanel>
-        <Button x:Name="btValiderPopUp" Width="142" Height="30" Content="Valider" Margin="118,192,0,0" Click="btValiderPopUp_Click" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <Button x:Name="btAnnulerPopUp" Width="139" Height="30" Content="Annuler" HorizontalAlignment="Left" Margin="329,192,0,0" VerticalAlignment="Top" />
+        <Button
+            x:Name="btValiderPopUp"
+            Width="142"
+            Height="30"
+            Margin="118,192,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btValiderPopUp_Click"
+            Content="Valider" />
+        <Button
+            x:Name="btAnnulerPopUp"
+            Width="139"
+            Height="30"
+            Margin="329,192,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Annuler" />
     </Grid>
 
 </Window>
