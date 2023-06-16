@@ -36,7 +36,7 @@ namespace MATINFO
                 {
                     // Supprimer la categorie sélectionnée de la liste
                     ((Categorie)lvCategorie.SelectedItem).Delete();
-                    ApplicationData.lesCategories.Remove(((Categorie)lvCategorie.SelectedItem));
+                    applicationData.lesCategories.Remove(((Categorie)lvCategorie.SelectedItem));
                     lvCategorie.Items.Refresh();
                 }
             }
@@ -58,7 +58,7 @@ namespace MATINFO
                 {
                     // Supprimer la categorie sélectionnée de la liste
                     ((Materiel)lvMateriel.SelectedItem).Delete();
-                    ApplicationData.lesMateriels.Remove(((Materiel)lvMateriel.SelectedItem));
+                    applicationData.lesMateriels.Remove(((Materiel)lvMateriel.SelectedItem));
                     lvMateriel.Items.Refresh();
 
                 }
@@ -80,13 +80,50 @@ namespace MATINFO
                 {
                     // Supprimer la categorie sélectionnée de la liste
                     ((Personnel)lvPersonnel.SelectedItem).Delete();
-                    ApplicationData.LesPersonnels.Remove(((Personnel)lvPersonnel.SelectedItem));
+                    applicationData.LesPersonnels.Remove(((Personnel)lvPersonnel.SelectedItem));
                     lvPersonnel.Items.Refresh();
                 }
             }
             else
             {
                 var ok = MessageBox.Show("Sélectionnez un personnel pour le supprimer", "Selection supression", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void btModifierCategorie_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (lvCategorie.SelectedItem != null)
+            {
+                new WindowPopUp(((Categorie)lvCategorie.SelectedItem).Idcategorie).ShowDialog();
+                applicationData.Refresh();
+
+                lvCategorie.ItemsSource = applicationData.lesCategories;
+
+
+            }
+
+            else
+            {
+                var ok = MessageBox.Show("Sélectionnez une catégorie pour la modifier", "Selection supression", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            
+        }
+
+        private void btModifierMateriel_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (lvCategorie.SelectedItem != null)
+            {
+                WindowPopUp popUp = new WindowPopUp(1);
+                popUp.Show();
+
+
+            }
+
+            else
+            {
+                var ok = MessageBox.Show("Sélectionnez une catégorie pour la modifier", "Selection supression", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }

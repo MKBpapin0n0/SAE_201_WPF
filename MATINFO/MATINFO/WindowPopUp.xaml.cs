@@ -19,14 +19,20 @@ namespace MATINFO
     /// </summary>
     public partial class WindowPopUp : Window
     {
-        public WindowPopUp()
+        int idcategorie;
+        public WindowPopUp(int idcategorie)
         {
             InitializeComponent();
+            this.idcategorie = idcategorie;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btValiderPopUp_Click(object sender, RoutedEventArgs e)
         {
+            // on doit déclencher la mise à jour du binding
 
+            ((Categorie)applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Nomcategorie = tbPopUp.Text;
+            ((Categorie)applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Update();
+            this.Close();
         }
     }
 }

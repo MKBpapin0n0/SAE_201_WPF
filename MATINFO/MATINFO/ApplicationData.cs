@@ -18,8 +18,11 @@ namespace MATINFO
 
         public ObservableCollection<Attribution> lesAttributions { get; set; }
 
-
         public ApplicationData()
+        {
+            Refresh();
+        }
+        public void Refresh()
         {
             Personnel e = new Personnel();
             LesPersonnels = e.FindAll();

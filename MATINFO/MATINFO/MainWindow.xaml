@@ -14,7 +14,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.DataContext>
-        <local:ApplicationData x:Name="ApplicationData" />
+        <local:ApplicationData x:Name="applicationData" />
     </Window.DataContext>
     <Grid>
         <ListView
@@ -115,15 +115,15 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn
-                        Width="200"
+                        Width="150"
                         DisplayMemberBinding="{Binding Nommateriel}"
                         Header="Nom materiel" />
                     <GridViewColumn
-                        Width="200"
+                        Width="100"
                         DisplayMemberBinding="{Binding Referenceconstructeurmateriel}"
                         Header="Reference" />
                     <GridViewColumn
-                        Width="200"
+                        Width="150"
                         DisplayMemberBinding="{Binding Codebarreinventaire}"
                         Header="Code Barre" />
                 </GridView>
@@ -189,7 +189,7 @@
             VerticalAlignment="Top"
             Content="Modifier"
             FontSize="15"
-            FontWeight="Bold" />
+            FontWeight="Bold" Click="btModifierCategorie_Click" />
         <Rectangle
             x:Name="rectMateriel"
             Margin="318,552,521,10"
@@ -218,7 +218,7 @@
             VerticalAlignment="Top"
             Content="Modifier"
             FontSize="15"
-            FontWeight="Bold" />
+            FontWeight="Bold" Click="btModifierMateriel_Click" />
         <Button
             x:Name="btSupprimerMateriel"
             Height="30"

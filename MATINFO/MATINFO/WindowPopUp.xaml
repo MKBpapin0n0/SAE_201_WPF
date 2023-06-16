@@ -9,11 +9,15 @@
     Width="600"
     Height="400"
     ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+    <Window.DataContext>
+        <local:ApplicationData x:Name="applicationData" />
+    </Window.DataContext>
     <Grid>
         <StackPanel
             Width="381"
-            Height="227"
+            Height="260"
             Margin="105,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center">
@@ -33,14 +37,9 @@
                 Text=""
                 TextAlignment="Center"
                 TextWrapping="Wrap" />
-            <StackPanel
-                Width="297"
-                Height="151"
-                HorizontalAlignment="Center"
-                Orientation="Horizontal">
-                <Button Width="123" Height="30" />
-            </StackPanel>
         </StackPanel>
+        <Button x:Name="btValiderPopUp" Width="142" Height="30" Content="Valider" Margin="118,192,0,0" Click="btValiderPopUp_Click" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Button x:Name="btAnnulerPopUp" Width="139" Height="30" Content="Annuler" HorizontalAlignment="Left" Margin="329,192,0,0" VerticalAlignment="Top" />
     </Grid>
 
 </Window>

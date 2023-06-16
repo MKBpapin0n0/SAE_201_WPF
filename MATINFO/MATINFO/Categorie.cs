@@ -64,7 +64,7 @@ namespace MATINFO
         {
             DataAccess data = new DataAccess();
             data.OpenConnection();
-            data.SetData($"UPDATE Categorie_materiel SET nomcategorie = '{this.Nomcategorie}'  WHERE idcategorie  = ({this.Idcategorie})");
+            data.SetData($"UPDATE Categorie_materiel SET nomcategorie = '{this.Nomcategorie}'  WHERE idcategorie  = {this.Idcategorie}");
         }
 
         public void Delete()
