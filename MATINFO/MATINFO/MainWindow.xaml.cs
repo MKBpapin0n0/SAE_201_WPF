@@ -115,7 +115,7 @@ namespace MATINFO
 
             if (lvMateriel.SelectedItem != null)
             {
-                new WindowModifMat(((Materiel)lvMateriel.SelectedItem).Idmateriel, ModeMat.Update).ShowDialog();
+                new WindowModifMat(((Materiel)lvMateriel.SelectedItem).Idmateriel, Mode.Update).ShowDialog();
                 applicationData.Refresh();
 
                 lvMateriel.ItemsSource = applicationData.lesMateriels;
@@ -133,7 +133,7 @@ namespace MATINFO
         {
             if (lvPersonnel.SelectedItem != null)
             {
-                new WindowModifPerso(((Personnel)lvPersonnel.SelectedItem).Idpersonnel, ModePerso.Update).ShowDialog();
+                new WindowModifPerso(((Personnel)lvPersonnel.SelectedItem).Idpersonnel, Mode.Update).ShowDialog();
                 applicationData.Refresh();
 
                 lvPersonnel.ItemsSource = applicationData.LesPersonnels;
@@ -152,6 +152,22 @@ namespace MATINFO
             applicationData.Refresh();
 
             lvCategorie.ItemsSource = applicationData.lesCategories;
+        }
+
+        private void btAjouterPersonnel_Click(object sender, RoutedEventArgs e)
+        {
+            new WindowModifPerso(0, Mode.Insert).ShowDialog();
+            applicationData.Refresh();
+
+            lvPersonnel.ItemsSource = applicationData.LesPersonnels;
+        }
+
+        private void btAjouterMateriel_Click(object sender, RoutedEventArgs e)
+        {
+            new WindowModifMat(0, Mode.Insert).ShowDialog();
+            applicationData.Refresh();
+
+            lvPersonnel.ItemsSource = applicationData.LesPersonnels;
         }
     }
 }

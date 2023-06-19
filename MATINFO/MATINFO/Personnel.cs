@@ -79,5 +79,13 @@ namespace MATINFO
             data.OpenConnection();
             data.SetData($"UPDATE Personnel SET emailpersonnel = '{this.Emailpersonnel}', nompersonnel = '{this.Nompersonnel}', prenompersonnel = '{this.Prenompersonnel}'  WHERE idpersonnel  = ({this.Idpersonnel})");
         }
+        public static int RecupeId()
+        {
+            DataAccess dat = new DataAccess();
+            dat.OpenConnection();
+            DataTable dt = dat.GetData("SELECT nextval('personnel_idpersonnel_seq'::regclass)\"IDPERS\" FROM personnel");
+            int result = Convert.ToInt32(dt.Rows[0]["IDPERS"]);
+            return result;
+        }
     }
 }

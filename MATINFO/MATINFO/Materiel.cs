@@ -84,6 +84,13 @@ namespace MATINFO
             data.SetData($"UPDATE Materiel SET nommateriel = '{this.Nommateriel}', referenceconstructeurmateriel = '{this.Referenceconstructeurmateriel}', codebarreinventaire = '{this.Codebarreinventaire}'  WHERE idmateriel  = ({this.Idmateriel})");
         }
 
-
+        public static int RecupeId()
+        {
+            DataAccess dat = new DataAccess();
+            dat.OpenConnection();
+            DataTable dt = dat.GetData("SELECT nextval('materiel_idmateriel_seq'::regclass)\"IDMAT\" FROM materiel");
+            int result = Convert.ToInt32(dt.Rows[0]["IDMAT"]);
+            return result;
+        }
     }
 }

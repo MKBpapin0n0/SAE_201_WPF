@@ -87,5 +87,15 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Annuler" />
+        <ComboBox x:Name="cbCategorie"
+            Width="143"
+            Height="32"
+            Margin="33,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+
+            />
+        <Label Content="Catégorie" HorizontalAlignment="Left" Height="51" Margin="48,125,0,0" VerticalAlignment="Top" Width="114" FontSize="20" FontWeight="Bold"/>
+
     </Grid>
 </Window>

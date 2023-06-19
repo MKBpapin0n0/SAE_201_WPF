@@ -213,7 +213,7 @@
             VerticalAlignment="Top"
             Content="Ajouter"
             FontSize="15"
-            FontWeight="Bold" />
+            FontWeight="Bold" Click="btAjouterMateriel_Click" />
         <Button
             x:Name="btModifierMateriel"
             Height="30"
@@ -249,7 +249,7 @@
             VerticalAlignment="Top"
             Content="Ajouter"
             FontSize="15"
-            FontWeight="Bold" />
+            FontWeight="Bold" Click="btAjouterPersonnel_Click" />
         <Button
             x:Name="btModifierPersonnel"
             Height="30"
