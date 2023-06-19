@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="WindowModifAttribution.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="WindowModifMat.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,7 +24,13 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="WindowModifAttribution.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="WindowModifMat.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowModifPerso - Copier.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowModifPerso.xaml">
