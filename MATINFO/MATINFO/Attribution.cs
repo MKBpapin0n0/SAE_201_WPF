@@ -5,11 +5,14 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//V.AB
 
 namespace MATINFO
 {
     public class Attribution : Crud<Attribution>
     {
+        public Personnel UnPersonnel { get; set; }
+        public Materiel UnMateriel { get; set; }
 
         public ObservableCollection<Personnel> lesPersonnels { get; set; }
 
@@ -18,16 +21,16 @@ namespace MATINFO
 
         }
 
-        public Attribution(int fk_idpersonnel, int idmateriel, DateTime dateattribution, string commentaireattribution)
+        public Attribution(int fk_idpersonnel, int fk_idmateriel, DateTime dateattribution, string commentaireattribution)
         {
             FK_Idpersonnel = fk_idpersonnel;
-            Idmateriel = idmateriel;
+            FK_Idmateriel = fk_idmateriel;
             Dateattribution = dateattribution;
             Commentaireattribution = commentaireattribution;
         }
 
         public int FK_Idpersonnel { get; set; }
-        public int Idmateriel { get; set; }
+        public int FK_Idmateriel { get; set; }
         public DateTime Dateattribution { get; set; }
         public string Commentaireattribution { get; set; }
 
@@ -35,14 +38,14 @@ namespace MATINFO
         {
             DataAccess data = new DataAccess();
             data.OpenConnection();
-            data.SetData($"INSERT INTO Attribution VALUES({this.FK_Idpersonnel},{this.Idmateriel},{this.Dateattribution},{this.Commentaireattribution})");
+            data.SetData($"INSERT INTO Attribution VALUES({this.FK_Idpersonnel},{this.FK_Idmateriel},{this.Dateattribution},{this.Commentaireattribution})");
         }
 
         public void Delete()
         {
             DataAccess data = new DataAccess();
             data.OpenConnection();
-            data.SetData($"DELETE FROM Attribution WHERE idmateriel = ({this.Idmateriel})");
+            data.SetData($"DELETE FROM Attribution WHERE idmateriel = ({this.FK_Idmateriel})");
         }
 
         public ObservableCollection<Attribution> FindAll()
@@ -71,14 +74,14 @@ namespace MATINFO
         {
             DataAccess data = new DataAccess();
             data.OpenConnection();
-            data.GetData($"SELECT * FROM Attribution WHERE idmateriel = ({this.Idmateriel})");
+            data.GetData($"SELECT * FROM Attribution WHERE idmateriel = ({this.FK_Idmateriel})");
         }
 
         public void Update()
         {
             DataAccess data = new DataAccess();
             data.OpenConnection();
-            data.SetData($"UPDATE Attribution SET dateattribution = '{this.Dateattribution}', commentaireattribution = '{this.Commentaireattribution}'  WHERE idmateriel  = ({this.Idmateriel})");
+            data.SetData($"UPDATE Attribution SET dateattribution = '{this.Dateattribution}', commentaireattribution = '{this.Commentaireattribution}'  WHERE idmateriel  = ({this.FK_Idmateriel})");
         }
     }
 }

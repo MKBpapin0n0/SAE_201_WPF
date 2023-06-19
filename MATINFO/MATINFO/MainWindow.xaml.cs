@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+//V.AB
 
 namespace MATINFO
 {
@@ -80,7 +81,7 @@ namespace MATINFO
                 {
                     // Supprimer la categorie sélectionnée de la liste
                     ((Personnel)lvPersonnel.SelectedItem).Delete();
-                    applicationData.LesPersonnels.Remove(((Personnel)lvPersonnel.SelectedItem));
+                    applicationData.lesPersonnels.Remove(((Personnel)lvPersonnel.SelectedItem));
                     lvPersonnel.Items.Refresh();
                 }
             }
@@ -107,7 +108,7 @@ namespace MATINFO
             {
                 var ok = MessageBox.Show("Sélectionnez une catégorie pour la modifier", "Selection supression", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-            
+
         }
 
         private void btModifierMateriel_Click(object sender, RoutedEventArgs e)
@@ -136,7 +137,7 @@ namespace MATINFO
                 new WindowModifPerso(((Personnel)lvPersonnel.SelectedItem).Idpersonnel, Mode.Update).ShowDialog();
                 applicationData.Refresh();
 
-                lvPersonnel.ItemsSource = applicationData.LesPersonnels;
+                lvPersonnel.ItemsSource = applicationData.lesPersonnels;
 
             }
 
@@ -159,7 +160,7 @@ namespace MATINFO
             new WindowModifPerso(0, Mode.Insert).ShowDialog();
             applicationData.Refresh();
 
-            lvPersonnel.ItemsSource = applicationData.LesPersonnels;
+            lvPersonnel.ItemsSource = applicationData.lesPersonnels;
         }
 
         private void btAjouterMateriel_Click(object sender, RoutedEventArgs e)
@@ -167,7 +168,61 @@ namespace MATINFO
             new WindowModifMat(0, Mode.Insert).ShowDialog();
             applicationData.Refresh();
 
-            lvPersonnel.ItemsSource = applicationData.LesPersonnels;
+            lvPersonnel.ItemsSource = applicationData.lesPersonnels;
+        }
+
+        private void btToutAfficher_Click(object sender, RoutedEventArgs e)
+        {
+            lvMateriel.DataContext = null;
+            lvMateriel.ItemsSource = applicationData.lesMateriels;
+
+            lvAttribution.DataContext = null;
+            lvAttribution.ItemsSource = applicationData.lesAttributions;
+        }
+
+        private void lvPersonnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lvPersonnel.SelectedItem != null)
+            {
+                Personnel selectedPersonnel = lvPersonnel.SelectedItem as Personnel;
+                lvAttribution.ItemsSource = applicationData.lesAttributions
+                    .Where(attribution => attribution.UnPersonnel == selectedPersonnel)
+                    .ToList();
+            }
+            else
+            {
+                lvAttribution.ItemsSource = null;
+            }
+        }
+
+        private void lvCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lvCategorie.SelectedItem != null)
+            {
+                Categorie selectedCategorie = lvCategorie.SelectedItem as Categorie;
+                lvAttribution.ItemsSource = applicationData.lesAttributions
+                    .Where(attribution => attribution.UnMateriel.UneCategorie == selectedCategorie)
+                    .ToList();
+            }
+            else
+            {
+                lvAttribution.ItemsSource = null;
+            }
+        }
+
+        private void lvMateriel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lvMateriel.SelectedItem != null)
+            {
+                Materiel selectedMateriel = lvMateriel.SelectedItem as Materiel;
+                lvAttribution.ItemsSource = applicationData.lesAttributions
+                    .Where(attribution => attribution.UnMateriel == selectedMateriel)
+                    .ToList();
+            }
+            else
+            {
+                lvAttribution.ItemsSource = null;
+            }
         }
 
 

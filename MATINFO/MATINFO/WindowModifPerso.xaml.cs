@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+//V.AB
 
 namespace MATINFO
 {
@@ -20,7 +21,7 @@ namespace MATINFO
     /// Logique d'interaction pour WindowModifPerso.xaml
     /// </summary>
     /// 
-    
+
     public partial class WindowModifPerso : Window
     {
         Mode leMode;
@@ -48,19 +49,19 @@ namespace MATINFO
             // on doit déclencher la mise à jour du binding
             if (Mode.Update == leMode)
             {
-                ((Personnel)applicationData.LesPersonnels.Single(x => x.Idpersonnel == this.idpersonnel)).Nompersonnel = tbNomPerso.Text;
-                ((Personnel)applicationData.LesPersonnels.Single(x => x.Idpersonnel == this.idpersonnel)).Update();
+                ((Personnel)applicationData.lesPersonnels.Single(x => x.Idpersonnel == this.idpersonnel)).Nompersonnel = tbNomPerso.Text;
+                ((Personnel)applicationData.lesPersonnels.Single(x => x.Idpersonnel == this.idpersonnel)).Update();
 
-                ((Personnel)applicationData.LesPersonnels.Single(x => x.Idpersonnel == this.idpersonnel)).Prenompersonnel = tbPrenomPerso.Text;
-                ((Personnel)applicationData.LesPersonnels.Single(x => x.Idpersonnel == this.idpersonnel)).Update();
+                ((Personnel)applicationData.lesPersonnels.Single(x => x.Idpersonnel == this.idpersonnel)).Prenompersonnel = tbPrenomPerso.Text;
+                ((Personnel)applicationData.lesPersonnels.Single(x => x.Idpersonnel == this.idpersonnel)).Update();
 
-                ((Personnel)applicationData.LesPersonnels.Single(x => x.Idpersonnel == this.idpersonnel)).Emailpersonnel = tbEmailPerso.Text;
-                ((Personnel)applicationData.LesPersonnels.Single(x => x.Idpersonnel == this.idpersonnel)).Update();
+                ((Personnel)applicationData.lesPersonnels.Single(x => x.Idpersonnel == this.idpersonnel)).Emailpersonnel = tbEmailPerso.Text;
+                ((Personnel)applicationData.lesPersonnels.Single(x => x.Idpersonnel == this.idpersonnel)).Update();
             }
             else if (Mode.Insert == leMode)
             {
                 Personnel perso = new Personnel(Personnel.RecupeId(), tbNomPerso.Text, tbPrenomPerso.Text, tbEmailPerso.Text);
-                applicationData.LesPersonnels.Add(perso);
+                applicationData.lesPersonnels.Add(perso);
                 perso.Create();
             }
             this.Close();

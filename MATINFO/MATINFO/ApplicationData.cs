@@ -10,7 +10,7 @@ namespace MATINFO
 {
     public class ApplicationData
     {
-        public ObservableCollection<Personnel> LesPersonnels { get; set; }
+        public ObservableCollection<Personnel> lesPersonnels { get; set; }
 
         public ObservableCollection<Materiel> lesMateriels { get; set; }
 
@@ -25,7 +25,7 @@ namespace MATINFO
         public void Refresh()
         {
             Personnel e = new Personnel();
-            LesPersonnels = e.FindAll();
+            lesPersonnels = e.FindAll();
 
             Materiel m = new Materiel();
             lesMateriels = m.FindAll();
@@ -51,10 +51,39 @@ namespace MATINFO
 
 
 
+            // pour chaque Attribution, on affecte la référence de son materiel
+            foreach (Attribution uneAttrib in lesAttributions.ToList())
+            {
+                uneAttrib.UnMateriel = lesMateriels.ToList().Find(g => g.Idmateriel == uneAttrib.FK_Idmateriel);
+            }
+            // pour chaque matériel, on affecte toutes les références des attributions appartenant au matériel
+            foreach (Materiel unMater in lesMateriels.ToList())
+            {
+                unMater.lesAttributions = new ObservableCollection<Attribution>(
+                lesAttributions.ToList().FindAll(e => e.FK_Idmateriel == unMater.Idmateriel));
+            }
 
 
+
+            // pour chaque Attribution, on affecte la référence de son personnel
+            foreach (Attribution uneAttrib in lesAttributions.ToList())
+            {
+                uneAttrib.UnPersonnel = lesPersonnels.ToList().Find(g => g.Idpersonnel == uneAttrib.FK_Idpersonnel);
+            }
+            // pour chaque personnel, on affecte toutes les références des attributions appartenant au personnel
+            foreach (Personnel unPerso in lesPersonnels.ToList())
+            {
+                unPerso.lesAttributions = new ObservableCollection<Attribution>(
+                lesAttributions.ToList().FindAll(e => e.FK_Idpersonnel == unPerso.Idpersonnel));
+            }
+
+
+
+
+
+            //ATTENTION CECI EST A TITRE EXPERIMENTAL
             // pour chaque materiel, on affecte la référence de son categorie
-            foreach (Personnel unPers in LesPersonnels.ToList())
+            foreach (Personnel unPers in lesPersonnels.ToList())
             {
                 unPers.UneAttribution = lesAttributions.ToList().Find(g => g.FK_Idpersonnel == unPers.Idpersonnel);
             }
@@ -62,7 +91,7 @@ namespace MATINFO
             foreach (Attribution uneAttrib in lesAttributions.ToList())
             {
                 uneAttrib.lesPersonnels = new ObservableCollection<Personnel>(
-                LesPersonnels.ToList().FindAll(e => e.Idpersonnel == uneAttrib.FK_Idpersonnel));
+                lesPersonnels.ToList().FindAll(e => e.Idpersonnel == uneAttrib.FK_Idpersonnel));
             }
         }
     }

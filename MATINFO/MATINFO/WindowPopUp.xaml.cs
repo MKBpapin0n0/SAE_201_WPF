@@ -17,8 +17,8 @@ namespace MATINFO
     /// <summary>
     /// Logique d'interaction pour WindowPopUp.xaml
     /// </summary>
-    
-    public enum Mode { Insert, Update};
+
+    public enum Mode { Insert, Update };
     public partial class WindowPopUp : Window
     {
         int idcategorie;
@@ -49,16 +49,15 @@ namespace MATINFO
             {
                 ((Categorie)applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Nomcategorie = tbPopUp.Text;
                 ((Categorie)applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Update();
-        }
+            }
             else if (Mode.Insert == leMode)
             {
-                Categorie cat = new Categorie(Categorie.RecupeId(),tbPopUp.Text);
+                Categorie cat = new Categorie(Categorie.RecupeId(), tbPopUp.Text);
                 applicationData.lesCategories.Add(cat);
                 cat.Create();
-    }
+            }
             this.Close();
         }
-
         private void btAnnulerPopUp_Click(object sender, RoutedEventArgs e)
         {
             if (Mode.Update == leMode)

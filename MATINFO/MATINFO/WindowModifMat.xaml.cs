@@ -29,8 +29,8 @@ namespace MATINFO
         {
             InitializeComponent();
 
-            
-            foreach(Categorie categorie in applicationData.lesCategories)
+
+            foreach (Categorie categorie in applicationData.lesCategories)
             {
                 cbCategorie.Items.Add(new ComboBoxItem()
                 {
@@ -38,7 +38,7 @@ namespace MATINFO
                     Name = $"Categorie{categorie.Idcategorie}"
                 });
             }
-            
+
             this.idmateriel = idmateriel;
             this.leMode = mode;
 
@@ -59,7 +59,7 @@ namespace MATINFO
             // on doit déclencher la mise à jour du binding
             if (Mode.Update == leMode)
             {
-                
+
 
                 ((Materiel)applicationData.lesMateriels.Single(x => x.Idmateriel == this.idmateriel)).Nommateriel = tbNomMateriel.Text;
                 ((Materiel)applicationData.lesMateriels.Single(x => x.Idmateriel == this.idmateriel)).Update();

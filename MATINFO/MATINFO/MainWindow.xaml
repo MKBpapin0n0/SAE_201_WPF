@@ -20,14 +20,34 @@
         <ListView
             x:Name="lvAttribution"
             Margin="10,10,340,372"
-            d:ItemsSource="{d:SampleData ItemCount=5}">
+            ItemsSource="{Binding Path=lesAttributions}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="80" Header="Matériel" />
-                    <GridViewColumn Width="100" Header="Nom personnel" />
-                    <GridViewColumn Width="110" Header="Prénom personnel" />
-                    <GridViewColumn Width="100" Header="Date attribution" />
-                    <GridViewColumn Width="250" Header="Commentaire" />
+                    <GridViewColumn
+                        x:Name="gvcNomMateriel"
+                        Width="120"
+                        DisplayMemberBinding="{Binding UnMateriel.Nommateriel}"
+                        Header="Nom Materiel" />
+                    <GridViewColumn
+                        x:Name="gvcNomPersonnel"
+                        Width="120"
+                        DisplayMemberBinding="{Binding UnPersonnel.Nompersonnel}"
+                        Header="Nom Personnel" />
+                    <GridViewColumn
+                        x:Name="gvcPrenomPersonnel"
+                        Width="120"
+                        DisplayMemberBinding="{Binding UnPersonnel.Prenompersonnel}"
+                        Header="Prenom Personnel" />
+                    <GridViewColumn
+                        x:Name="gvcDateAttribution"
+                        Width="140"
+                        DisplayMemberBinding="{Binding Dateattribution}"
+                        Header="Date Attribution" />
+                    <GridViewColumn
+                        x:Name="gvcCommentaireAttribution"
+                        Width="140"
+                        DisplayMemberBinding="{Binding Commentaireattribution}"
+                        Header="Commentaire" />
                 </GridView>
             </ListView.View>
         </ListView>
@@ -38,6 +58,7 @@
             Margin="0,241,66,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
+            Click="btToutAfficher_Click"
             Content="Tout afficher"
             FontSize="25"
             FontWeight="Bold" />
@@ -93,7 +114,8 @@
             Height="190"
             Margin="10,342,829,0"
             VerticalAlignment="Top"
-            ItemsSource="{Binding Path=lesCategories}">
+            ItemsSource="{Binding Path=lesCategories}"
+            SelectionChanged="lvCategorie_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn
@@ -111,7 +133,8 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             DataContext="{Binding SelectedItem, ElementName=lvCategorie}"
-            ItemsSource="{Binding Path=lesMateriels}">
+            ItemsSource="{Binding Path=lesMateriels}"
+            SelectionChanged="lvMateriel_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn
@@ -136,7 +159,8 @@
             Margin="0,342,9,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            ItemsSource="{Binding Path=LesPersonnels}">
+            ItemsSource="{Binding Path=lesPersonnels}"
+            SelectionChanged="lvPersonnel_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn
@@ -211,9 +235,10 @@
             Height="30"
             Margin="338,567,542,0"
             VerticalAlignment="Top"
+            Click="btAjouterMateriel_Click"
             Content="Ajouter"
             FontSize="15"
-            FontWeight="Bold" Click="btAjouterMateriel_Click" />
+            FontWeight="Bold" />
         <Button
             x:Name="btModifierMateriel"
             Height="30"
@@ -247,9 +272,10 @@
             Height="30"
             Margin="751,567,129,0"
             VerticalAlignment="Top"
+            Click="btAjouterPersonnel_Click"
             Content="Ajouter"
             FontSize="15"
-            FontWeight="Bold" Click="btAjouterPersonnel_Click" />
+            FontWeight="Bold" />
         <Button
             x:Name="btModifierPersonnel"
             Height="30"
