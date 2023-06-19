@@ -396,3 +396,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/MATINFO/MATINFO/MainWindow.xaml.cs
+/.gitignore
+/MATINFO/MATINFO/obj/Debug/net6.0-windows/MATINFO.csproj.AssemblyReference.cache
+/MATINFO/MATINFO/obj/Debug/net6.0-windows/MATINFO_MarkupCompile.i.cache
