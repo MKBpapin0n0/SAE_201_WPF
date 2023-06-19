@@ -79,9 +79,26 @@ namespace MATINFO
             this.Close();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btAnnulerMateriel_Click(object sender, RoutedEventArgs e)
         {
+            if (Mode.Update == leMode)
+            {
+                var result = MessageBox.Show("En fermant cette fenêtre votre modification d'un matériel sera annulé", "Confirmation Annulation modification", MessageBoxButton.OKCancel, MessageBoxImage.Question);
 
+                if (result == MessageBoxResult.OK)
+                {
+                    this.Close();
+                }
+            }
+            else if (Mode.Insert == leMode)
+            {
+                var result = MessageBox.Show("En fermant cette fenêtre votre ajout d'un matériel sera annulé", "Confirmation Annulation ajout", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.OK)
+                {
+                    this.Close();
+                }
+            }
         }
     }
 }

@@ -80,12 +80,13 @@
             Click="btValiderPerso_Click"
             Content="Valider" />
         <Button
-            x:Name="btAnnulerPopUp"
+            x:Name="btAnnulerPerso"
             Width="139"
             Height="30"
             Margin="347,307,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Click="btAnnulerPerso_Click"
             Content="Annuler" />
     </Grid>
 </Window>

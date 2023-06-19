@@ -59,5 +59,26 @@ namespace MATINFO
             this.Close();
         }
 
+        private void btAnnulerPopUp_Click(object sender, RoutedEventArgs e)
+        {
+            if (Mode.Update == leMode)
+            {
+                var result = MessageBox.Show("En fermant cette fenêtre votre modification d'une categorie sera annulé", "Confirmation Annulation modification", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.OK)
+                {
+                    this.Close();
+                }
+            }
+            else if (Mode.Insert == leMode)
+            {
+                var result = MessageBox.Show("En fermant cette fenêtre votre ajout d'une catégorie sera annulé", "Confirmation Annulation ajout", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.OK)
+                {
+                    this.Close();
+                }
+            }
+        }
     }
 }

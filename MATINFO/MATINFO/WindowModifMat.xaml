@@ -80,22 +80,30 @@
             Click="btValiderMateriel_Click"
             Content="Valider" />
         <Button
-            x:Name="btAnnulerPopUp"
+            x:Name="btAnnulerMateriel"
             Width="139"
             Height="30"
             Margin="347,307,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Click="btAnnulerMateriel_Click"
             Content="Annuler" />
-        <ComboBox x:Name="cbCategorie"
+        <ComboBox
+            x:Name="cbCategorie"
             Width="143"
             Height="32"
             Margin="33,0,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-
-            />
-        <Label Content="Catégorie" HorizontalAlignment="Left" Height="51" Margin="48,125,0,0" VerticalAlignment="Top" Width="114" FontSize="20" FontWeight="Bold"/>
+            VerticalAlignment="Center" />
+        <Label
+            Width="114"
+            Height="51"
+            Margin="48,125,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Catégorie"
+            FontSize="20"
+            FontWeight="Bold" />
 
     </Grid>
 </Window>
