@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "O4/Uq9Pj44Qf9j5wAwDQkP8BRTs+SkpO8xZtvfp2YxU0XOCcxEZQNFVw/ZaDMbr1d/bth6b9cGOUWHBWeCywOg==",
+  "dgSpecHash": "Qt0BpupcxI0T395CWvvgi9UY0rXP/7+m4+HOdvh1+iyz+eyG3QmXBZYE83xyQ9+1OI0Ndljdw3IrALfOUOLK2g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\grumeaun\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\MATINFO.csproj",
+  "projectFilePath": "C:\\Users\\biancale\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\MATINFO.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\grumeaun\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\grumeaun\\.nuget\\packages\\npgsql\\7.0.4\\npgsql.7.0.4.nupkg.sha512",
-    "C:\\Users\\grumeaun\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\biancale\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\biancale\\.nuget\\packages\\npgsql\\7.0.4\\npgsql.7.0.4.nupkg.sha512",
+    "C:\\Users\\biancale\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }
