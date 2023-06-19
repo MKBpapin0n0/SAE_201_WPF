@@ -15,14 +15,19 @@ using System.Windows.Shapes;
 namespace MATINFO
 {
     /// <summary>
-    /// Logique d'interaction pour WindowPopUp.xaml
+    /// L'enum 'Mode' permet d'avoir une seule Pop-up pour ajouter / modifier une catégorie
     /// </summary>
-
     public enum Mode { Insert, Update };
     public partial class WindowPopUp : Window
     {
         int idcategorie;
         Mode leMode;
+
+        /// <summary>
+        /// Elle initialise les composants et elle permet de changer le content du bouton selon le mode
+        /// </summary>
+        /// <param name="idcategorie">ce paramètre permet de récupérer ou créer l'id d'une catégorie dans la BDD</param>
+        /// <param name="mode">ce paramètre sert a connaitre le mode de la Pop-up</param>
         public WindowPopUp(int idcategorie, Mode mode)
         {
             InitializeComponent();
@@ -41,10 +46,13 @@ namespace MATINFO
             }
         }
 
+        /// <summary>
+        /// Le code du bouton 'valider' de la Pop-up permet d'ajouter si leMode est Insert ou de modifier si leMode est Update dans la BDD
+        /// </summary>
+        /// <param name="sender">l'objet qui appelle la méthode. Elle regarde si le bouton valider a été appuyé</param>
+        /// <param name="e">est un argument</param>
         private void btValiderPopUp_Click(object sender, RoutedEventArgs e)
         {
-
-            // on doit déclencher la mise à jour du binding
             if (Mode.Update == leMode)
             {
                 ((Categorie)applicationData.lesCategories.Single(x => x.Idcategorie == this.idcategorie)).Nomcategorie = tbPopUp.Text;
@@ -58,11 +66,17 @@ namespace MATINFO
             }
             this.Close();
         }
+
+        /// <summary>
+        /// Le bouton annuler permet de revenir sur la page principale sans avoir fait de modification ou d'ajout dans une catégorie
+        /// </summary>
+        /// <param name="sender">l'objet qui appelle la méthode. Elle reagarde si le bouton annuler a été appuyé</param>
+        /// <param name="e">est un argument</param>
         private void btAnnulerPopUp_Click(object sender, RoutedEventArgs e)
         {
             if (Mode.Update == leMode)
             {
-                var result = MessageBox.Show("En fermant cette fenêtre votre modification d'une categorie sera annulé", "Confirmation Annulation modification", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+                var result = MessageBox.Show("En fermant cette fenêtre votre modification d'une categorie sera annulé", "Confirmation Annulation modification", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
 
                 if (result == MessageBoxResult.OK)
                 {
@@ -71,7 +85,7 @@ namespace MATINFO
             }
             else if (Mode.Insert == leMode)
             {
-                var result = MessageBox.Show("En fermant cette fenêtre votre ajout d'une catégorie sera annulé", "Confirmation Annulation ajout", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+                var result = MessageBox.Show("En fermant cette fenêtre votre ajout d'une catégorie sera annulé", "Confirmation Annulation ajout", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
 
                 if (result == MessageBoxResult.OK)
                 {

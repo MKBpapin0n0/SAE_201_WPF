@@ -1,20 +1,10 @@
-// File:    DataAccess.cs
-// Author:  nmege
-// Created: samedi 26 novembre 2022 11:00:28
-// Purpose: Definition of Class DataAccess
-
 using System;
 using System.Data;
 using System.Windows;
 using Npgsql;
 
-//ATTENTION à bien donner les droits à votre utilisateur :
-//GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO matinfo;
-//GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO matinfo;
-
-namespace MATINFO /// A MODIFIER SI VOTRE PROJET A UN AUTRE NOM
+namespace MATINFO
 {
-
     public class DataAccess
     {
         public NpgsqlConnection? NpgSQLConnect

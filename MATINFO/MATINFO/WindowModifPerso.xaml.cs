@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,15 +18,16 @@ using System.Windows.Shapes;
 
 namespace MATINFO
 {
-    /// <summary>
-    /// Logique d'interaction pour WindowModifPerso.xaml
-    /// </summary>
-    /// 
-
     public partial class WindowModifPerso : Window
     {
         Mode leMode;
         int idpersonnel;
+
+        /// <summary>
+        /// Elle initialise les composants et elle permet de changer le content du bouton selon le mode
+        /// </summary>
+        /// <param name="idpersonnel">ce paramètre permet de récupérer ou créer l'id d'un personnel dans la BDD</param>
+        /// <param name="mode">ce paramètre sert a connaitre le mode de la Pop-up</param>
         public WindowModifPerso(int idpersonnel, Mode mode)
         {
             InitializeComponent();
@@ -44,6 +46,11 @@ namespace MATINFO
             }
         }
 
+        /// <summary>
+        /// Le code du bouton 'valider' de la Pop-up permet d'ajouter si leMode est Insert ou de modifier si leMode est Update dans la BDD avec le regex
+        /// </summary>
+        /// <param name="sender">l'objet qui appelle la méthode. Elle regarde si le bouton valider a été appuyé</param>
+        /// <param name="e">est un argument</param>
         private void btValiderPerso_Click(object sender, RoutedEventArgs e)
         {
             // on doit déclencher la mise à jour du binding
@@ -60,18 +67,30 @@ namespace MATINFO
             }
             else if (Mode.Insert == leMode)
             {
-                Personnel perso = new Personnel(Personnel.RecupeId(), tbNomPerso.Text, tbPrenomPerso.Text, tbEmailPerso.Text);
-                applicationData.lesPersonnels.Add(perso);
-                perso.Create();
+                if (ValidationEmail(tbEmailPerso.Text) == true)
+                {
+                    Personnel perso = new Personnel(Personnel.RecupeId(), tbNomPerso.Text, tbPrenomPerso.Text, tbEmailPerso.Text);
+                    applicationData.lesPersonnels.Add(perso);
+                    perso.Create();
+                }
+                else
+                {
+                    MessageBox.Show("Email non-conforme", "Email Non-Conforme", MessageBoxButton.OKCancel, MessageBoxImage.Error);
+                }
             }
             this.Close();
         }
 
+        /// <summary>
+        /// Cette méthode permet de montrer une Pop-up de confirmation d'annulation si on appuye sur le bouton annuler
+        /// </summary>
+        /// <param name="sender">l'objet qui appelle la méthode. Elle regarde si le bouton annuler a été appuyé</param>
+        /// <param name="e">est un argument</param>
         private void btAnnulerPerso_Click(object sender, RoutedEventArgs e)
         {
             if (Mode.Update == leMode)
             {
-                var result = MessageBox.Show("En fermant cette fenêtre votre modification d'un personnel sera annulé", "Confirmation Annulation modification", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+                var result = MessageBox.Show("En fermant cette fenêtre votre modification d'un personnel sera annulé", "Confirmation Annulation modification", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
 
                 if (result == MessageBoxResult.OK)
                 {
@@ -80,13 +99,22 @@ namespace MATINFO
             }
             else if (Mode.Insert == leMode)
             {
-                var result = MessageBox.Show("En fermant cette fenêtre votre ajout d'un personnel sera annulé", "Confirmation Annulation ajout", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+                var result = MessageBox.Show("En fermant cette fenêtre votre ajout d'un personnel sera annulé", "Confirmation Annulation ajout", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
 
                 if (result == MessageBoxResult.OK)
                 {
                     this.Close();
                 }
             }
+        }
+
+        /// <summary>
+        /// Permet d'avoir les regex demander
+        /// </summary>
+        static bool ValidationEmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            return Regex.IsMatch(email, pattern);
         }
     }
 }

@@ -86,16 +86,18 @@
             Margin="0,52,106,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
+            Click="btAjouterAttribution_Click"
             Content="Ajouter"
             FontSize="15"
             FontWeight="Bold" />
         <Button
-            x:Name="btModifierAttribtuon"
+            x:Name="btModifierAttribution"
             Width="120"
             Height="30"
             Margin="0,105,106,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
+            Click="btModifierAttribution_Click"
             Content="Modifier"
             FontSize="15"
             FontWeight="Bold" />
@@ -106,6 +108,7 @@
             Margin="0,158,106,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
+            Click="btSupprimerAttribution_Click"
             Content="Supprimer"
             FontSize="15"
             FontWeight="Bold" />

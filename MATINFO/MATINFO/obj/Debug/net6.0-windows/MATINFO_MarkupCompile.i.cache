@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\biancale\source\repos\SAE_201_WPF\MATINFO\MATINFO\obj\Debug\net6.0-windows\
+C:\Users\grumeaun\source\repos\SAE_201_WPF\MATINFO\MATINFO\obj\Debug\net6.0-windows\
 MATINFO
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\biancale\source\repos\SAE_201_WPF\MATINFO\MATINFO\App.xaml
-42147018440
+C:\Users\grumeaun\source\repos\SAE_201_WPF\MATINFO\MATINFO\App.xaml
+6-226661379
 
-151787799800
-1962133531271
-MainWindow.xaml;WindowModifMat.xaml;WindowModifPerso.xaml;WindowPopUp.xaml;
+17-761225200
+196-987106495
+MainWindow.xaml;WindowAjouterAttribution.xaml;WindowModifAttrib.xaml;WindowModifMat.xaml;WindowModifPerso.xaml;WindowPopUp.xaml;
 
 True
 

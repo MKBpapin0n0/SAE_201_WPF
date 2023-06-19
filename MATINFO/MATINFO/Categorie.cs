@@ -20,6 +20,11 @@ namespace MATINFO
 
         }
 
+        /// <summary>
+        /// Cette méthode sert a initialiser ce que comporte une catégorie
+        /// </summary>
+        /// <param name="idcategorie">Ce paramètre est l'id d'une catégorie</param>
+        /// <param name="nomcategorie">Ce paramètre est le nom d'une catégorie</param>
         public Categorie(int idcategorie, string nomcategorie)
         {
             Idcategorie = idcategorie;
@@ -30,6 +35,10 @@ namespace MATINFO
         public int Idcategorie { get; set; }
         public string Nomcategorie { get; set; }
 
+
+        /// <summary>
+        /// Cette méthode permet de récupérer tous les éléments de la table categorie_materiel sous forme de liste
+        /// </summary>
         public ObservableCollection<Categorie> FindAll()
         {
             ObservableCollection<Categorie> lesCategories = new ObservableCollection<Categorie>();
@@ -47,6 +56,9 @@ namespace MATINFO
             return lesCategories;
         }
 
+        /// <summary>
+        /// Cette méthode permet d'ajouter une catégorie de la table categorie_materiel de la BDD
+        /// </summary>
         public void Create()
         {
             DataAccess data = new DataAccess();
@@ -54,6 +66,9 @@ namespace MATINFO
             data.SetData($"INSERT INTO Categorie_materiel VALUES({this.Idcategorie},'{this.Nomcategorie}')");
         }
 
+        /// <summary>
+        /// Cette méthode permet de d'afficher les catégories de la table categorie_materiel de la BDD
+        /// </summary>
         public void Read()
         {
             DataAccess data = new DataAccess();
@@ -61,6 +76,9 @@ namespace MATINFO
             data.GetData($"SELECT * FROM Categorie_materiel WHERE idcategorie = ({this.Idcategorie})");
         }
 
+        /// <summary>
+        /// Cette méthode permet de modifier une catégorie de la table categorie_materiel de la BDD
+        /// </summary>
         public void Update()
         {
             DataAccess data = new DataAccess();
@@ -68,6 +86,9 @@ namespace MATINFO
             data.SetData($"UPDATE Categorie_materiel SET nomcategorie = '{this.Nomcategorie}'  WHERE idcategorie  = {this.Idcategorie}");
         }
 
+        /// <summary>
+        /// Cette méthode permet de retirer une catégorie de la table categorie_materiel de la BDD
+        /// </summary>
         public void Delete()
         {
             DataAccess data = new DataAccess();
@@ -75,14 +96,24 @@ namespace MATINFO
             data.SetData($"DELETE FROM Categorie_materiel WHERE idcategorie = {this.Idcategorie}");
         }
 
+
         public ObservableCollection<Categorie> FindBySelection(string criteres)
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Cette méthode sert à elever un matériel dans la liste des matériels
+        /// </summary>
+        /// <param name="materiel">Ce paramètre permet de récupérer un matériel</param>
         public void Remove(Materiel materiel)
         {
             this.lesMateriels.Remove(materiel);
         }
+
+        /// <summary>
+        /// Cette méthode permet d'ajouter un id qui n'est pas utiliser a une nouvelle categorie_materiel
+        /// </summary>
         public static int RecupeId()
         {
             DataAccess dat = new DataAccess();
