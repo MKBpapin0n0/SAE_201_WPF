@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -60,9 +61,16 @@ namespace MATINFO
             }
             else if (Mode.Insert == leMode)
             {
-                Personnel perso = new Personnel(Personnel.RecupeId(), tbNomPerso.Text, tbPrenomPerso.Text, tbEmailPerso.Text);
-                applicationData.lesPersonnels.Add(perso);
-                perso.Create();
+                if (ValidationEmail(tbEmailPerso.Text) == true)
+                {
+                    Personnel perso = new Personnel(Personnel.RecupeId(), tbNomPerso.Text, tbPrenomPerso.Text, tbEmailPerso.Text);
+                    applicationData.lesPersonnels.Add(perso);
+                    perso.Create();
+                }
+                else
+                {
+                    MessageBox.Show("Email non-conforme", "Email Non-Conforme", MessageBoxButton.OKCancel, MessageBoxImage.Error);
+                }
             }
             this.Close();
         }
@@ -87,6 +95,11 @@ namespace MATINFO
                     this.Close();
                 }
             }
+        }
+        static bool ValidationEmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            return Regex.IsMatch(email, pattern);
         }
     }
 }
