@@ -163,23 +163,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\biancale\\.nuget\\packages\\": {},
+    "C:\\Users\\grumeaun\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\biancale\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\MATINFO.csproj",
+      "projectUniqueName": "C:\\Users\\grumeaun\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\MATINFO.csproj",
       "projectName": "MATINFO",
-      "projectPath": "C:\\Users\\biancale\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\MATINFO.csproj",
-      "packagesPath": "C:\\Users\\biancale\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\biancale\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\obj\\",
+      "projectPath": "C:\\Users\\grumeaun\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\MATINFO.csproj",
+      "packagesPath": "C:\\Users\\grumeaun\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\grumeaun\\source\\repos\\SAE_201_WPF\\MATINFO\\MATINFO\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\biancale\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\grumeaun\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
