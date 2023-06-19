@@ -54,7 +54,8 @@
             Margin="329,192,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Annuler" Click="btAnnulerPopUp_Click" />
+            Click="btAnnulerPopUp_Click"
+            Content="Annuler" />
     </Grid>
 
 </Window>

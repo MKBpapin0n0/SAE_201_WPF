@@ -5,14 +5,18 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//V.AB
 
 namespace MATINFO
 {
     public class Personnel : Crud<Personnel>
     {
+        public ObservableCollection<Attribution> lesAttributions { get; set; }
+        public Attribution UneAttribution { get; set; }
+
         public Personnel()
         {
-            
+
         }
 
         public Personnel(int idpersonnel, string emailpersonnel, string nompersonnel, string prenompersonnel)
@@ -22,8 +26,6 @@ namespace MATINFO
             Nompersonnel = nompersonnel;
             Prenompersonnel = prenompersonnel;
         }
-
-        public Attribution UneAttribution { get; set; }
 
         public int Idpersonnel { get; set; }
         public string Emailpersonnel { get; set; }

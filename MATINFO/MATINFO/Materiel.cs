@@ -5,11 +5,16 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//V.AB
 
 namespace MATINFO
 {
-    public class Materiel: Crud<Materiel>
+    public class Materiel : Crud<Materiel>
     {
+        public Categorie UneCategorie { get; set; }
+
+        public ObservableCollection<Attribution> lesAttributions { get; set; }
+
         public Materiel()
         {
 
@@ -24,9 +29,6 @@ namespace MATINFO
             Codebarreinventaire = codebarreinventaire;
 
         }
-
-        public Categorie UneCategorie { get; set; }
-
 
         public int Idmateriel { get; set; }
         public int FK_Idcategorie { get; set; }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//V.AB
 
 namespace MATINFO
 {
@@ -87,7 +88,7 @@ namespace MATINFO
             DataAccess dat = new DataAccess();
             dat.OpenConnection();
             DataTable dt = dat.GetData("SELECT nextval('categorie_materiel_idcategorie_seq'::regclass)\"Tu\" FROM Categorie_materiel");
-            int result =Convert.ToInt32(dt.Rows[0]["Tu"]);
+            int result = Convert.ToInt32(dt.Rows[0]["Tu"]);
             return result;
         }
     }
