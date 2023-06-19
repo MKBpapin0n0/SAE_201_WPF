@@ -197,12 +197,19 @@ namespace MATINFO
 
         private void lvCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // Binding pour le DataContext du ListView
+            Binding dataContextBinding = new Binding("SelectedItem");
+            dataContextBinding.ElementName = "lvCategorie";
+            lvMateriel.SetBinding(ListView.DataContextProperty, dataContextBinding);
+
+            // Binding pour l'ItemsSource du ListView
+            Binding itemsSourceBinding = new Binding("lesMateriels");
+            lvMateriel.SetBinding(ListView.ItemsSourceProperty, itemsSourceBinding);
+
             if (lvCategorie.SelectedItem != null)
             {
                 Categorie selectedCategorie = lvCategorie.SelectedItem as Categorie;
-                lvAttribution.ItemsSource = applicationData.lesAttributions
-                    .Where(attribution => attribution.UnMateriel.UneCategorie == selectedCategorie)
-                    .ToList();
+                lvAttribution.ItemsSource = applicationData.lesAttributions.Where(attribution => attribution.UnMateriel.UneCategorie == selectedCategorie).ToList();
             }
             else
             {
@@ -215,9 +222,7 @@ namespace MATINFO
             if (lvMateriel.SelectedItem != null)
             {
                 Materiel selectedMateriel = lvMateriel.SelectedItem as Materiel;
-                lvAttribution.ItemsSource = applicationData.lesAttributions
-                    .Where(attribution => attribution.UnMateriel == selectedMateriel)
-                    .ToList();
+                lvAttribution.ItemsSource = applicationData.lesAttributions.Where(attribution => attribution.UnMateriel == selectedMateriel).ToList();
             }
             else
             {
