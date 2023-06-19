@@ -70,6 +70,16 @@
                 TextAlignment="Center"
                 TextWrapping="Wrap" />
         </StackPanel>
+        <Label
+            Width="140"
+            Height="27"
+            Margin="368,0,0,0"
+            Content="Ex : A-000AAAAAA" Background="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Label
+            Width="140"
+            Height="27"
+            Margin="368,243,0,0"
+            Content="Ex : AAAAA0000000AAA" Background="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top" />
         <Button
             x:Name="btValiderMateriel"
             Width="142"

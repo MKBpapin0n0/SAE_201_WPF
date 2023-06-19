@@ -69,7 +69,7 @@ namespace MATINFO
             {
                 if (ValidationEmail(tbEmailPerso.Text) == true)
                 {
-                    Personnel perso = new Personnel(Personnel.RecupeId(), tbNomPerso.Text, tbPrenomPerso.Text, tbEmailPerso.Text);
+                    Personnel perso = new Personnel(Personnel.RecupeId(), tbEmailPerso.Text, tbNomPerso.Text, tbPrenomPerso.Text);
                     applicationData.lesPersonnels.Add(perso);
                     perso.Create();
                 }
