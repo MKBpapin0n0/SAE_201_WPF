@@ -34,12 +34,12 @@ namespace MATINFO
             if (mode == Mode.Update)
             {
                 btValiderPerso.Content = "Modifier";
-                this.Title = "Modifier Catégorie";
+                this.Title = "Modifier Personnel";
             }
             else if (mode == Mode.Insert)
             {
                 btValiderPerso.Content = "Ajouter";
-                this.Title = "Ajouter Catégorie";
+                this.Title = "Ajouter Personnel";
             }
         }
 

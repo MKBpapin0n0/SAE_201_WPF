@@ -34,7 +34,7 @@ namespace MATINFO
         {
             DataAccess data = new DataAccess();
             data.OpenConnection();
-            data.SetData($"INSERT INTO Personnel VALUES({this.Idpersonnel},{this.Emailpersonnel},{this.Nompersonnel},{this.Prenompersonnel})");
+            data.SetData($"INSERT INTO Personnel VALUES({this.Idpersonnel},'{this.Emailpersonnel}','{this.Nompersonnel}','{this.Prenompersonnel}');");
         }
 
         public void Delete()
